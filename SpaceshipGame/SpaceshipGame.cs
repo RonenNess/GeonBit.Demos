@@ -25,7 +25,7 @@ namespace SpaceshipGame
         public SpaceshipGame()
         {
             UiTheme = "editor";
-            DebugMode = true;
+            DebugMode = false;
             EnableVsync = true;
         }
 
@@ -49,7 +49,7 @@ namespace SpaceshipGame
         override public void Initialize()
         {
             // make fullscreen
-            MakeFullscreen(false);
+            //MakeFullscreen(false);
 
             // create a new empty scene
             GameScene scene = new GameScene();
@@ -63,6 +63,10 @@ namespace SpaceshipGame
             // Init background and music
             InitAmbience(scene);
 
+            // create meteors and explosions prototype
+            InitMeteors();
+            InitExplosions();
+
             // create the player
             InitPlayer(scene);
 
@@ -70,11 +74,62 @@ namespace SpaceshipGame
             Managers.GameInput.SetDefaultTopDownControls();
 
             // add diagnostic data paragraph to scene
-            DiagnosticData = new GeonBit.UI.Entities.Paragraph("", GeonBit.UI.Entities.Anchor.BottomLeft, offset: new Vector2(20, 0));
+            DiagnosticData = new GeonBit.UI.Entities.Paragraph("", GeonBit.UI.Entities.Anchor.BottomLeft, offset: new Vector2(20, 20));
             scene.UserInterface.AddEntity(DiagnosticData);
 
             // load our scene (eg make it active)
             scene.Load();
+        }
+
+        /// <summary>
+        /// Create the meteor object prototype.
+        /// </summary>
+        private void InitMeteors()
+        {
+
+        }
+
+        /// <summary>
+        /// Create explosion effect object prototype.
+        /// </summary>
+        private void InitExplosions()
+        {
+            // create an explosion object
+            BaseAnimatorProperties prop = BaseAnimatorProperties.Defaults;
+            GameObject explosion = new GameObject("explosion");
+
+            // create a sphere renderer for the explosion effect
+            explosion.AddComponent(new ShapeRenderer(ShapeMeshes.SphereLowPoly));
+            explosion.GetComponent<ShapeRenderer>().RenderingQueue = GeonBit.Core.Graphics.RenderingQueue.Effects;
+
+            // add animators, jitter and time-to-live
+            explosion.AddComponent(new TimeToLive(0.5f));
+            explosion.AddComponent(new SpawnRandomizer(minColor: Color.Red, maxColor: Color.Yellow));
+            explosion.AddComponent(new FadeAnimator(prop, 1.0f, 0f, 0.5f));
+            explosion.AddComponent(new ScaleAnimator(prop, 0.5f, 1.5f, 0.5f));
+
+            // add sound when explosion spawns
+            SoundEffect explosionSound = new SoundEffect("game/explode");
+            explosionSound.PlayOnSpawn = true;
+            explosion.AddComponent(explosionSound);
+
+            // register as prototype
+            Managers.Prototypes.Register(explosion);
+
+
+            // create particles system for multiple explosions effect
+            GameObject explosionsSet = new GameObject("explosions-set");
+            ParticleSystem system = explosionsSet.AddComponent(new ParticleSystem()) as ParticleSystem;
+
+            // add our explosion particle and set frequency
+            system.AddParticleType(new ParticleType(explosion, frequency: 1.0f, frequencyChange:-0.5f));
+            system.Interval = 0.05f;
+            system.TimeToLive = 2.5f;
+            system.DestroyParentWhenExpired = true;
+            system.AddParticlesToRoot = true;
+
+            // register as prototype
+            Managers.Prototypes.Register(explosionsSet);
         }
 
         /// <summary>
@@ -114,12 +169,15 @@ namespace SpaceshipGame
 
             // create the progressbar to display player hp
             GeonBit.UI.Entities.ProgressBar hpShow = new GeonBit.UI.Entities.ProgressBar(0, 5, new Vector2(300, -1), GeonBit.UI.Entities.Anchor.TopLeft);
+            hpShow.Caption.Text = "Shield";
             hpShow.Locked = true;
+            hpShow.ProgressFill.FillColor = Color.Green;
             UI.AddEntity(hpShow);
             PlayerStatus.HpShow = hpShow;
 
             // create the progressbar to display player ammo
-            GeonBit.UI.Entities.ProgressBar ammoShow = new GeonBit.UI.Entities.ProgressBar(0, 100, new Vector2(200, -1), GeonBit.UI.Entities.Anchor.TopLeft, new Vector2(0, 50));
+            GeonBit.UI.Entities.ProgressBar ammoShow = new GeonBit.UI.Entities.ProgressBar(0, 100, new Vector2(300, -1), GeonBit.UI.Entities.Anchor.TopLeft, new Vector2(0, 50));
+            ammoShow.Caption.Text = "Ammo";
             ammoShow.Locked = true;
             ammoShow.ProgressFill.FillColor = Color.Red;
             UI.AddEntity(ammoShow);
@@ -212,8 +270,8 @@ namespace SpaceshipGame
             GameObject backfire = new GameObject("backfire");
 
             // create a sphere renderer for the backfire particle
-            backfire.AddComponent(new ShapeRenderer(ShapeMeshes.Sphere));
-            backfire.GetComponent<ShapeRenderer>().RenderingQueue = GeonBit.Core.Graphics.RenderingQueue.Effects;
+            ShapeRenderer renderer = backfire.AddComponent(new ShapeRenderer(ShapeMeshes.SphereLowPoly)) as ShapeRenderer;
+            renderer.RenderingQueue = GeonBit.Core.Graphics.RenderingQueue.Effects;
 
             // add animators, jitter and time-to-live
             backfire.AddComponent(new TimeToLive(0.5f));

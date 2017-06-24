@@ -74,7 +74,8 @@ namespace SpaceshipGame
                 Managers.SoundManager.StopMusic();
 
                 // add explosions effect
-                //_GameObject.AddComponent(new DeathExplosionsEffect());
+                GameObject deathExplosions = Managers.Prototypes.Spawn("explosions-set");
+                deathExplosions.Parent = _GameObject;
             }
         }
 
