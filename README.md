@@ -1,2 +1,2 @@
 # GeonBit.Demos
-Demo projects for GeonBit engine.
+Demo projects for the [GeonBit](http://geonbit.com) engine.
