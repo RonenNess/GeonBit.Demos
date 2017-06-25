@@ -61,6 +61,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game\Components\BackgroundAnimator.cs" />
+    <Compile Include="Game\Components\AsteroidControls.cs" />
     <Compile Include="Game\Components\PlayerControls.cs" />
     <Compile Include="Game\PlayerStatus.cs" />
     <Compile Include="SpaceshipGame.cs" />

@@ -49,7 +49,7 @@ namespace SpaceshipGame
         override public void Initialize()
         {
             // make fullscreen
-            //MakeFullscreen(false);
+            MakeFullscreen(false);
 
             // create a new empty scene
             GameScene scene = new GameScene();
@@ -64,7 +64,7 @@ namespace SpaceshipGame
             InitAmbience(scene);
 
             // create meteors and explosions prototype
-            InitMeteors();
+            InitAsteroids(scene);
             InitExplosions();
 
             // create the player
@@ -84,9 +84,40 @@ namespace SpaceshipGame
         /// <summary>
         /// Create the meteor object prototype.
         /// </summary>
-        private void InitMeteors()
+        /// <param name="scene">Game main scene.</param>
+        private void InitAsteroids(GameScene scene)
         {
+            // create the asteroid gameobject
+            GameObject asteroid = new GameObject("asteroid");
 
+            // create the asteroid physical body
+            PhysicalBody asteroidBody = new PhysicalBody(new SphereInfo(1.5f), mass: 500f);
+            asteroidBody.Gravity = Vector3.Zero;
+            asteroidBody.IsEthereal = true;
+            asteroid.AddComponent(asteroidBody);
+
+            // add asteroid controller component
+            asteroid.AddComponent(new AsteroidControls());
+
+            // create the asteroid model renderer
+            GameObject asteroidModelObject = new GameObject("model");
+            asteroidModelObject.Parent = asteroid;
+            ModelRenderer astroidModelRenderer = new ModelRenderer("game/astroid");
+            astroidModelRenderer.MaterialOverride.Texture = Resources.GetTexture("game/astroid_tex");
+            astroidModelRenderer.MaterialOverride.SpecularColor = Color.Black;
+            asteroidModelObject.AddComponent(astroidModelRenderer);
+
+            // register the asteroid prototype
+            Managers.Prototypes.Register(asteroid);
+
+            // create a particle system to generate asteroids randomly
+            ParticleSystem asteroidsGenerator = new ParticleSystem();
+            asteroidsGenerator.AddParticleType(new ParticleType(asteroid, frequency: 0.065f, frequencyChange: 0.00085f));
+            asteroidsGenerator.Interval = 0.25f;
+            asteroidsGenerator.AddParticlesToRoot = true;
+
+            // add asteroids generator to scene
+            scene.Root.AddComponent(asteroidsGenerator);
         }
 
         /// <summary>
@@ -106,7 +137,7 @@ namespace SpaceshipGame
             explosion.AddComponent(new TimeToLive(0.5f));
             explosion.AddComponent(new SpawnRandomizer(minColor: Color.Red, maxColor: Color.Yellow));
             explosion.AddComponent(new FadeAnimator(prop, 1.0f, 0f, 0.5f));
-            explosion.AddComponent(new ScaleAnimator(prop, 0.5f, 1.5f, 0.5f));
+            explosion.AddComponent(new ScaleAnimator(prop, 0.5f, 2.5f, 0.5f));
 
             // add sound when explosion spawns
             SoundEffect explosionSound = new SoundEffect("game/explode");
@@ -118,13 +149,14 @@ namespace SpaceshipGame
 
 
             // create particles system for multiple explosions effect
+            explosion.AddComponent(new SpawnRandomizer(positionJitter: Vector3.One * 1.5f));
             GameObject explosionsSet = new GameObject("explosions-set");
             ParticleSystem system = explosionsSet.AddComponent(new ParticleSystem()) as ParticleSystem;
 
             // add our explosion particle and set frequency
-            system.AddParticleType(new ParticleType(explosion, frequency: 1.0f, frequencyChange:-0.5f));
+            system.AddParticleType(new ParticleType(explosion, frequency: 1.0f, frequencyChange:-0.35f));
             system.Interval = 0.05f;
-            system.TimeToLive = 2.5f;
+            system.TimeToLive = 3.0f;
             system.DestroyParentWhenExpired = true;
             system.AddParticlesToRoot = true;
 
@@ -202,7 +234,7 @@ namespace SpaceshipGame
             GameObject player = new GameObject("player", SceneNodeType.Simple);
 
             // create a physical body for the player (note: make it start height in the air so the player ship will "drop" into scene).
-            Vector3 bodySize = new Vector3(1f, 4, 3.5f);
+            Vector3 bodySize = new Vector3(1f, 1.5f, 3.5f);
             PhysicalBody shipPhysics = new PhysicalBody(new BoxInfo(bodySize), mass: 10f, inertia: 0f);
             shipPhysics.Position = Vector3.UnitY * 30;
             shipPhysics.SetDamping(0.95f, 0.95f);
