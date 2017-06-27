@@ -18,3 +18,10 @@ A simple 3D game with a spaceship that need to navigate between asteroids.
 Illustrate the built-in sprite & billboard components, and how to use them.
 
 ![Screenshot](Sprites/screenshot.png "Screenshot")
+
+## ParticleSystems
+
+Show some CPU-based particle system examples.
+
+![Screenshot](ParticleSystems/screenshot.png "Screenshot")
+
