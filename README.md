@@ -12,3 +12,9 @@ Just an empty GeonBit project, created directly from the GeonBit template and un
 A simple 3D game with a spaceship that need to navigate between asteroids.
 
 ![Screenshot](SpaceshipGame/screenshot.png "Screenshot")
+
+## Sprites
+
+Illustrate the built-in sprite & billboard components, and how to use them.
+
+![Screenshot](Sprites/screenshot.png "Screenshot")
