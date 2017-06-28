@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprites", "Sprites\Sprites.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticleSystems", "ParticleSystems\ParticleSystems.csproj", "{13E7DF93-9EE3-4DBB-8287-5E061F48EAE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkinnedMesh", "SkinnedMesh\SkinnedMesh.csproj", "{FFDCC68C-1FDE-4ACD-A9C2-CCC07A46CF55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{13E7DF93-9EE3-4DBB-8287-5E061F48EAE5}.Release|x64.Build.0 = Release|x64
 		{13E7DF93-9EE3-4DBB-8287-5E061F48EAE5}.Release|x86.ActiveCfg = Release|x86
 		{13E7DF93-9EE3-4DBB-8287-5E061F48EAE5}.Release|x86.Build.0 = Release|x86
+		{FFDCC68C-1FDE-4ACD-A9C2-CCC07A46CF55}.Debug|x64.ActiveCfg = Debug|x64
+		{FFDCC68C-1FDE-4ACD-A9C2-CCC07A46CF55}.Debug|x64.Build.0 = Debug|x64
+		{FFDCC68C-1FDE-4ACD-A9C2-CCC07A46CF55}.Debug|x86.ActiveCfg = Debug|x86
+		{FFDCC68C-1FDE-4ACD-A9C2-CCC07A46CF55}.Debug|x86.Build.0 = Debug|x86
+		{FFDCC68C-1FDE-4ACD-A9C2-CCC07A46CF55}.Release|x64.ActiveCfg = Release|x64
+		{FFDCC68C-1FDE-4ACD-A9C2-CCC07A46CF55}.Release|x64.Build.0 = Release|x64
+		{FFDCC68C-1FDE-4ACD-A9C2-CCC07A46CF55}.Release|x86.ActiveCfg = Release|x86
+		{FFDCC68C-1FDE-4ACD-A9C2-CCC07A46CF55}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
