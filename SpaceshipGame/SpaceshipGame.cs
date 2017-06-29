@@ -130,7 +130,7 @@ namespace SpaceshipGame
             GameObject explosion = new GameObject("explosion");
 
             // create a sphere renderer for the explosion effect
-            ShapeRenderer renderer = explosion.AddComponent(new ShapeRenderer(ShapeMeshes.Sphere)) as ShapeRenderer;
+            ShapeRenderer renderer = explosion.AddComponent(new ShapeRenderer(ShapeMeshes.SphereSmooth)) as ShapeRenderer;
             renderer.RenderingQueue = GeonBit.Core.Graphics.RenderingQueue.Effects;
 
             // add animators, jitter and time-to-live
@@ -302,7 +302,7 @@ namespace SpaceshipGame
             GameObject backfire = new GameObject("backfire");
 
             // create a sphere renderer for the backfire particle
-            ShapeRenderer renderer = backfire.AddComponent(new ShapeRenderer(ShapeMeshes.Sphere)) as ShapeRenderer;
+            ShapeRenderer renderer = backfire.AddComponent(new ShapeRenderer(ShapeMeshes.SphereSmooth)) as ShapeRenderer;
             renderer.RenderingQueue = GeonBit.Core.Graphics.RenderingQueue.Effects;
 
             // add animators, jitter and time-to-live
