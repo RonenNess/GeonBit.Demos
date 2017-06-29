@@ -1771,16 +1771,7 @@
 /processorParam:TextureFormat=Color
 /build:GeonBit.Core/Textures/geonbit-icon.png
 
-#begin game/head.tga
-/copy:game/head.tga
-
-#begin game/jacket.tga
-/copy:game/jacket.tga
-
-#begin game/pants.tga
-/copy:game/pants.tga
-
-#begin game/soldier.FBX
+#begin game/mech/Mech.fbx
 /importer:FbxImporter
 /processor:GpuAnimatedModelProcessor
 /processorParam:MaxBones=72
@@ -1800,32 +1791,21 @@
 /processorParam:Scale=1
 /processorParam:SwapWindingOrder=False
 /processorParam:TextureFormat=Compressed
-/build:game/soldier.FBX
+/build:game/mech/Mech.fbx
 
-#begin game/upBodyC.tga
-/copy:game/upBodyC.tga
+#begin game/mech/Mech5.obj
+/copy:game/mech/Mech5.obj
 
-#begin game/headS.tga
-/copy:game/headS.tga
+#begin game/mech/Mech5_final3.blend
+/copy:game/mech/Mech5_final3.blend
 
-#begin game/headN.tga
-/copy:game/headN.tga
+#begin game/mech/Mech5_desert.png
+/importer:
+/processor:
+/build:game/mech/Mech5_desert.png
 
-#begin game/jacketN.tga
-/copy:game/jacketN.tga
-
-#begin game/jacketS.tga
-/copy:game/jacketS.tga
-
-#begin game/pantsN.tga
-/copy:game/pantsN.tga
-
-#begin game/pantsS.tga
-/copy:game/pantsS.tga
-
-#begin game/upBodyN.tga
-/copy:game/upBodyN.tga
-
-#begin game/upBodyS.tga
-/copy:game/upBodyS.tga
+#begin game/mech/Mech5_spec.png.001.png
+/importer:
+/processor:
+/build:game/mech/Mech5_spec.png.001.png
 

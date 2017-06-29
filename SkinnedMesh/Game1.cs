@@ -50,11 +50,23 @@ namespace EmptyGeonBitProject
             GameScene scene = new GameScene();
 
             // create skinned mesh object
-            GameObject soldier = new GameObject("soldier");
-            SkinnedModelRenderer model = new SkinnedModelRenderer("game/soldier");
-            soldier.AddComponent(model, "model");
-            soldier.SceneNode.Scale = Vector3.One;
-            soldier.Parent = scene.Root;
+            GameObject modelObject = new GameObject("soldier");
+            SkinnedModelRenderer model = new SkinnedModelRenderer("game/mech/Mech");
+
+            // set model materials color and disable lighting
+            foreach (var material in model.GetMaterials())
+            {
+                material.LightingEnabled = false;
+                material.DiffuseColor = Color.Gray;
+                material.SpecularColor = Color.White;
+                material.SpecularPower = 50f;
+            }
+
+            // add to gameobject and set its position and rotation
+            modelObject.AddComponent(model, "model");
+            modelObject.SceneNode.Scale = Vector3.One * 0.1f;
+            modelObject.SceneNode.RotationY = (float)System.Math.PI;
+            modelObject.Parent = scene.Root;
 
             // create skybox
             Managers.GraphicsManager.CreateSkybox(null, scene.Root);
@@ -64,8 +76,8 @@ namespace EmptyGeonBitProject
             camera.AddComponent(new CameraEditorController());
             Camera cameraComponent = new Camera();
             camera.AddComponent(cameraComponent);
-            camera.SceneNode.Position = new Vector3(0, 1, -0.6f) * 130f;
-            camera.SceneNode.RotationX = -2.24f;
+            camera.SceneNode.Position = new Vector3(0, 0.8f, -0.75f) * 250f;
+            camera.SceneNode.RotationX = -2.5f;
             camera.Parent = scene.Root;
 
             // set scene
