@@ -1800,12 +1800,80 @@
 /copy:game/mech/Mech5_final3.blend
 
 #begin game/mech/Mech5_desert.png
-/importer:
-/processor:
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
 /build:game/mech/Mech5_desert.png
 
 #begin game/mech/Mech5_spec.png.001.png
-/importer:
-/processor:
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
 /build:game/mech/Mech5_spec.png.001.png
+
+#begin game/wolf/Wolf.fbx
+/importer:FbxImporter
+/processor:CpuAnimatedModelProcessor
+/processorParam:VertexBufferType=DynamicWriteOnly
+/processorParam:IndexBufferType=Default
+/processorParam:MaxBones=72
+/processorParam:GenerateKeyframesFrequency=0
+/processorParam:FixRealBoneRoot=False
+/processorParam:ColorKeyColor=0,0,0,0
+/processorParam:ColorKeyEnabled=True
+/processorParam:DefaultEffect=BasicEffect
+/processorParam:GenerateMipmaps=True
+/processorParam:GenerateTangentFrames=False
+/processorParam:PremultiplyTextureAlpha=True
+/processorParam:PremultiplyVertexColors=True
+/processorParam:ResizeTexturesToPowerOfTwo=False
+/processorParam:RotationX=0
+/processorParam:RotationY=0
+/processorParam:RotationZ=0
+/processorParam:Scale=1
+/processorParam:SwapWindingOrder=False
+/processorParam:TextureFormat=Compressed
+/build:game/wolf/Wolf.fbx
+
+#begin game/wolf/textures/fella3.jpg
+/copy:game/wolf/textures/fella3.jpg
+
+#begin game/wolf/textures/wolf col.jpg
+/copy:game/wolf/textures/wolf col.jpg
+
+#begin game/wolf/textures/Wolf_Body.jpg
+/copy:game/wolf/textures/Wolf_Body.jpg
+
+#begin game/wolf/textures/Wolf_Eyes_1.jpg
+/copy:game/wolf/textures/Wolf_Eyes_1.jpg
+
+#begin game/wolf/textures/Wolf_Eyes_2.jpg
+/copy:game/wolf/textures/Wolf_Eyes_2.jpg
+
+#begin game/wolf/textures/Wolf_Fur.jpg
+/copy:game/wolf/textures/Wolf_Fur.jpg
+
+#begin game/wolf/textures/Wolf_Fur_Alpha.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:game/wolf/textures/Wolf_Fur_Alpha.png
 
