@@ -36,3 +36,10 @@ Shows basic skinned animation.
 
 ![Screenshot](SkinnedMesh/screenshot.png "Screenshot")
 
+
+## Octree
+
+Shows the Octree scene node type and how it can optimize renderings.
+
+![Screenshot](Octree/screenshot.png "Screenshot")
+

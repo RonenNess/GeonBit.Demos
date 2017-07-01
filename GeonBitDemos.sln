@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticleSystems", "Particle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkinnedMesh", "SkinnedMesh\SkinnedMesh.csproj", "{FFDCC68C-1FDE-4ACD-A9C2-CCC07A46CF55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octree", "Octree\Octree.csproj", "{D87B40D3-E528-4D0D-AF6E-6098BC6F8A22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{FFDCC68C-1FDE-4ACD-A9C2-CCC07A46CF55}.Release|x64.Build.0 = Release|x64
 		{FFDCC68C-1FDE-4ACD-A9C2-CCC07A46CF55}.Release|x86.ActiveCfg = Release|x86
 		{FFDCC68C-1FDE-4ACD-A9C2-CCC07A46CF55}.Release|x86.Build.0 = Release|x86
+		{D87B40D3-E528-4D0D-AF6E-6098BC6F8A22}.Debug|x64.ActiveCfg = Debug|x64
+		{D87B40D3-E528-4D0D-AF6E-6098BC6F8A22}.Debug|x64.Build.0 = Debug|x64
+		{D87B40D3-E528-4D0D-AF6E-6098BC6F8A22}.Debug|x86.ActiveCfg = Debug|x86
+		{D87B40D3-E528-4D0D-AF6E-6098BC6F8A22}.Debug|x86.Build.0 = Debug|x86
+		{D87B40D3-E528-4D0D-AF6E-6098BC6F8A22}.Release|x64.ActiveCfg = Release|x64
+		{D87B40D3-E528-4D0D-AF6E-6098BC6F8A22}.Release|x64.Build.0 = Release|x64
+		{D87B40D3-E528-4D0D-AF6E-6098BC6F8A22}.Release|x86.ActiveCfg = Release|x86
+		{D87B40D3-E528-4D0D-AF6E-6098BC6F8A22}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
