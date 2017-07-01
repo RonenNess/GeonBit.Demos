@@ -15,9 +15,6 @@ namespace EmptyGeonBitProject
     /// </summary>
     internal class Game1 : GeonBitGame
     {
-        // paragraph to show diagnostic data
-        GeonBit.UI.Entities.Paragraph DiagnosticData;
-
         /// <summary>
         /// Initialize your GeonBitGame properties here.
         /// </summary>
@@ -126,8 +123,12 @@ namespace EmptyGeonBitProject
             camera.Parent = scene.Root;
 
             // add diagnostic data paragraph to scene
-            DiagnosticData = new GeonBit.UI.Entities.Paragraph("", GeonBit.UI.Entities.Anchor.BottomLeft, scale:0.75f, offset: new Vector2(20, 20));
-            scene.UserInterface.AddEntity(DiagnosticData);
+            var diagnosticData = new GeonBit.UI.Entities.Paragraph("", GeonBit.UI.Entities.Anchor.BottomLeft, offset: Vector2.One * 10f, scale: 0.7f);
+            diagnosticData.BeforeDraw = (GeonBit.UI.Entities.Entity entity) =>
+            {
+                diagnosticData.Text = Managers.Diagnostic.GetReportString();
+            };
+            scene.UserInterface.AddEntity(diagnosticData);
 
             // set scene
             scene.Load();
@@ -139,7 +140,6 @@ namespace EmptyGeonBitProject
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         override public void Draw(GameTime gameTime)
         {
-            DiagnosticData.Text = Managers.Diagnostic.GetReportString();
         }
     }
 }

@@ -16,9 +16,6 @@ namespace SpaceshipGame
     /// </summary>
     internal class SpaceshipGame : GeonBitGame
     {
-        // paragraph to show diagnostic data
-        GeonBit.UI.Entities.Paragraph DiagnosticData;
-
         /// <summary>
         /// Initialize your GeonBitGame properties here.
         /// </summary>
@@ -74,8 +71,12 @@ namespace SpaceshipGame
             Managers.GameInput.SetDefaultTopDownControls();
 
             // add diagnostic data paragraph to scene
-            DiagnosticData = new GeonBit.UI.Entities.Paragraph("", GeonBit.UI.Entities.Anchor.BottomLeft, offset: new Vector2(20, 20));
-            scene.UserInterface.AddEntity(DiagnosticData);
+            var diagnosticData = new GeonBit.UI.Entities.Paragraph("", GeonBit.UI.Entities.Anchor.BottomLeft, offset: Vector2.One * 10f, scale: 0.7f);
+            diagnosticData.BeforeDraw = (GeonBit.UI.Entities.Entity entity) =>
+            {
+                diagnosticData.Text = Managers.Diagnostic.GetReportString();
+            };
+            scene.UserInterface.AddEntity(diagnosticData);
 
             // load our scene (eg make it active)
             scene.Load();
@@ -351,8 +352,6 @@ namespace SpaceshipGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         override public void Draw(GameTime gameTime)
         {
-            // update diagnostic data text
-            DiagnosticData.Text = Managers.Diagnostic.GetReportString();
         }
     }
 }

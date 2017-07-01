@@ -21,9 +21,6 @@ namespace ParticleSystems
         // list of particle systems in demo
         List<GameObject> _systems = new List<GameObject>();
 
-        // paragraph to show diagnostic data
-        GeonBit.UI.Entities.Paragraph DiagnosticData;
-
         /// <summary>
         /// Initialize your GeonBitGame properties here.
         /// </summary>
@@ -78,8 +75,12 @@ namespace ParticleSystems
             scene.UserInterface.AddEntity(instructions);
 
             // add diagnostic data paragraph to scene
-            DiagnosticData = new GeonBit.UI.Entities.Paragraph("", GeonBit.UI.Entities.Anchor.BottomLeft, offset: new Vector2(20, 20));
-            scene.UserInterface.AddEntity(DiagnosticData);
+            var diagnosticData = new GeonBit.UI.Entities.Paragraph("", GeonBit.UI.Entities.Anchor.BottomLeft, offset: Vector2.One * 10f, scale: 0.7f);
+            diagnosticData.BeforeDraw = (GeonBit.UI.Entities.Entity entity) =>
+            {
+                diagnosticData.Text = Managers.Diagnostic.GetReportString();
+            };
+            scene.UserInterface.AddEntity(diagnosticData);
 
             // create camera
             camera = new GameObject();
@@ -334,8 +335,6 @@ namespace ParticleSystems
         {
             /// TBD add any custom drawing functionality here.
             /// Note: since GeonBit handle its own drawing internally, usually you don't need to do anything here.
-
-            DiagnosticData.Text = Managers.Diagnostic.GetReportString();
         }
     }
 }
