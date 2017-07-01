@@ -84,7 +84,6 @@ namespace EmptyGeonBitProject
                 // create skinned mesh object
                 GameObject modelObject = new GameObject("wolf");
                 SkinnedModelRenderer model = new SkinnedModelRenderer("game/wolf/Wolf");
-                model.RenderingQueue = GeonBit.Core.Graphics.RenderingQueue.Mixed;
                 model.SetClip("Wolf_Skeleton|Wolf_Walk_cycle_", transitionTime: 0f);
 
                 // set model materials color and disable lighting
@@ -96,7 +95,9 @@ namespace EmptyGeonBitProject
                 }
 
                 // fix something in wolf's model (problem with one of the mesh effects)
-                var furMaterial = model.GetMaterial("Wolf_obj_fur", 0);
+                var furMesh = model.GetMesh("Wolf_obj_fur");
+                furMesh.RenderingQueue = GeonBit.Core.Graphics.RenderingQueue.Opacity;
+                var furMaterial = furMesh.GetMaterial(0);
                 furMaterial.Alpha = 1f;
                 furMaterial.DiffuseColor = Color.White;
                 furMaterial.SpecularPower = 10f;

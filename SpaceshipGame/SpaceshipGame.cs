@@ -112,7 +112,7 @@ namespace SpaceshipGame
 
             // create a particle system to generate asteroids randomly
             ParticleSystem asteroidsGenerator = new ParticleSystem();
-            asteroidsGenerator.AddParticleType(new ParticleType(asteroid, frequency: 0.065f, frequencyChange: 0.00085f));
+            asteroidsGenerator.AddParticleType(new ParticleType(asteroid, frequency: 0.08f, frequencyChange: 0.00085f));
             asteroidsGenerator.Interval = 0.25f;
             asteroidsGenerator.AddParticlesToRoot = true;
 
@@ -263,7 +263,7 @@ namespace SpaceshipGame
             // create the player bullets prototype - these are the objects player spawn when he shoots
             // first, create the bullet game object and add shape renderer to it
             GameObject bullet = new GameObject("bullet", SceneNodeType.Simple);
-            bullet.SceneNode.Scale = new Vector3(0.2f, 0.2f, 1f);
+            bullet.SceneNode.Scale = new Vector3(0.2f, 0.4f, 1f);
             ShapeRenderer bulletShape = new ShapeRenderer(ShapeMeshes.Sphere);
             bulletShape.MaterialOverride.DiffuseColor = Color.Red;
             bulletShape.RenderingQueue = GeonBit.Core.Graphics.RenderingQueue.Solid;
