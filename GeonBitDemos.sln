@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkinnedMesh", "SkinnedMesh\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octree", "Octree\Octree.csproj", "{D87B40D3-E528-4D0D-AF6E-6098BC6F8A22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isometric", "Isometric\Isometric.csproj", "{5DDB6E21-5561-4A2D-89E6-0945E90B3109}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{D87B40D3-E528-4D0D-AF6E-6098BC6F8A22}.Release|x64.Build.0 = Release|x64
 		{D87B40D3-E528-4D0D-AF6E-6098BC6F8A22}.Release|x86.ActiveCfg = Release|x86
 		{D87B40D3-E528-4D0D-AF6E-6098BC6F8A22}.Release|x86.Build.0 = Release|x86
+		{5DDB6E21-5561-4A2D-89E6-0945E90B3109}.Debug|x64.ActiveCfg = Debug|x64
+		{5DDB6E21-5561-4A2D-89E6-0945E90B3109}.Debug|x64.Build.0 = Debug|x64
+		{5DDB6E21-5561-4A2D-89E6-0945E90B3109}.Debug|x86.ActiveCfg = Debug|x86
+		{5DDB6E21-5561-4A2D-89E6-0945E90B3109}.Debug|x86.Build.0 = Debug|x86
+		{5DDB6E21-5561-4A2D-89E6-0945E90B3109}.Release|x64.ActiveCfg = Release|x64
+		{5DDB6E21-5561-4A2D-89E6-0945E90B3109}.Release|x64.Build.0 = Release|x64
+		{5DDB6E21-5561-4A2D-89E6-0945E90B3109}.Release|x86.ActiveCfg = Release|x86
+		{5DDB6E21-5561-4A2D-89E6-0945E90B3109}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
