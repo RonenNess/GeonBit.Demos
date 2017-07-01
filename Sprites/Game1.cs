@@ -20,9 +20,9 @@ namespace Sprite
         /// </summary>
         public Game1()
         {
-            UiTheme = "editor";
-            DebugMode = true;
-            EnableVsync = true;
+            InitParams.UiTheme = "editor";
+            InitParams.DebugMode = true;
+            InitParams.EnableVsync = true;
         }
 
         /// <summary>
@@ -46,9 +46,6 @@ namespace Sprite
         /// </summary>
         override public void Initialize()
         {
-            // make fullscreen but with frame
-            //MakeFullscreen(true);
-
             // create the scene
             GameScene scene = new GameScene();
 

@@ -20,9 +20,9 @@ namespace EmptyGeonBitProject
         /// </summary>
         public Game1()
         {
-            UiTheme = "hd";
-            DebugMode = true;
-            EnableVsync = true;
+            InitParams.UiTheme = "hd";
+            InitParams.DebugMode = true;
+            InitParams.EnableVsync = true;
         }
 
         /// <summary>

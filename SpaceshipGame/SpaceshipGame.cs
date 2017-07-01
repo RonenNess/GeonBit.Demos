@@ -21,9 +21,10 @@ namespace SpaceshipGame
         /// </summary>
         public SpaceshipGame()
         {
-            UiTheme = "editor";
-            DebugMode = false;
-            EnableVsync = true;
+            InitParams.UiTheme = "editor";
+            InitParams.DebugMode = false;
+            InitParams.EnableVsync = true;
+            InitParams.FullScreen = true;
         }
 
         /// <summary>
@@ -45,9 +46,6 @@ namespace SpaceshipGame
         /// </summary>
         override public void Initialize()
         {
-            // make fullscreen
-            MakeFullscreen(false);
-
             // create a new empty scene
             GameScene scene = new GameScene();
 

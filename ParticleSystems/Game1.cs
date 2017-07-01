@@ -26,9 +26,10 @@ namespace ParticleSystems
         /// </summary>
         public Game1()
         {
-            UiTheme = "hd";
-            DebugMode = true;
-            EnableVsync = true;
+            InitParams.UiTheme = "hd";
+            InitParams.DebugMode = true;
+            InitParams.EnableVsync = true;
+            InitParams.FullScreen = true;
         }
 
         /// <summary>
@@ -61,9 +62,6 @@ namespace ParticleSystems
         /// </summary>
         override public void Initialize()
         {
-            // make fullscreen but with frame
-            MakeFullscreen(true);
-
             // set default scene node type
             GameObject.DefaultSceneNodeType = SceneNodeType.Simple;
 

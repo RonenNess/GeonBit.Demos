@@ -20,9 +20,10 @@ namespace EmptyGeonBitProject
         /// </summary>
         public Game1()
         {
-            UiTheme = "hd";
-            DebugMode = true;
-            EnableVsync = false;
+            InitParams.UiTheme = "hd";
+            InitParams.DebugMode = true;
+            InitParams.EnableVsync = false;
+            InitParams.FullScreen = true;
         }
 
         /// <summary>
@@ -50,9 +51,6 @@ namespace EmptyGeonBitProject
         /// </summary>
         override public void Initialize()
         {
-            // make fullscreen but with frame
-            MakeFullscreen(true);
-
             // set scene size
             int sceneSize = 10000;
 
