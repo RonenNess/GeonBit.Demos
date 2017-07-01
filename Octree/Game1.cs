@@ -24,6 +24,7 @@ namespace EmptyGeonBitProject
             InitParams.DebugMode = true;
             InitParams.EnableVsync = false;
             InitParams.FullScreen = true;
+            InitParams.Title = "Octree";
         }
 
         /// <summary>

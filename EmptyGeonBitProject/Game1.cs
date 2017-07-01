@@ -23,6 +23,7 @@ namespace EmptyGeonBitProject
             InitParams.UiTheme = "hd";
             InitParams.DebugMode = true;
             InitParams.EnableVsync = true;
+            InitParams.Title = "Empty Project";
         }
 
         /// <summary>

@@ -30,6 +30,7 @@ namespace ParticleSystems
             InitParams.DebugMode = true;
             InitParams.EnableVsync = true;
             InitParams.FullScreen = true;
+            InitParams.Title = "Particles";
         }
 
         /// <summary>

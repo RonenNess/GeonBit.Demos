@@ -25,6 +25,7 @@ namespace SpaceshipGame
             InitParams.DebugMode = false;
             InitParams.EnableVsync = true;
             InitParams.FullScreen = true;
+            InitParams.Title = "Super Spaceship Game";
         }
 
         /// <summary>

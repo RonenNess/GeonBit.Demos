@@ -23,6 +23,7 @@ namespace Sprite
             InitParams.UiTheme = "editor";
             InitParams.DebugMode = true;
             InitParams.EnableVsync = true;
+            InitParams.Title = "Sprites";
         }
 
         /// <summary>
