@@ -42,7 +42,7 @@ namespace EmptyGeonBitProject
             }
 
             // toggle rendering octree debug data
-            if (Managers.GameInput.IsKeyboardKeyDown(GeonBit.Input.KeyboardKeys.Space))
+            if (Managers.GameInput.IsKeyboardKeyReleased(GeonBit.Input.KeyboardKeys.Space))
             {
                 Managers.Diagnostic.DebugRenderOctree = !Managers.Diagnostic.DebugRenderOctree;
             }
