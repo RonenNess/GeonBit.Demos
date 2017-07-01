@@ -43,3 +43,9 @@ Shows the Octree scene node type and how it can optimize renderings.
 
 ![Screenshot](Octree/screenshot.png "Screenshot")
 
+
+## Isometric
+
+Shows a trick to how to make Isometric-styled game.
+
+![Screenshot](Isometric/screenshot.png "Screenshot")
