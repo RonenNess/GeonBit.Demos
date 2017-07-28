@@ -66,11 +66,11 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AnimationImporters, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GeonBit.0.0.0.3\lib\geonbit\AnimationImporters.dll</HintPath>
+      <HintPath>..\packages\GeonBit.0.0.0.4\lib\geonbit\AnimationImporters.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Animations, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GeonBit.0.0.0.3\lib\geonbit\Animations.dll</HintPath>
+      <HintPath>..\packages\GeonBit.0.0.0.4\lib\geonbit\Animations.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="BulletSharp, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -82,7 +82,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="GeonBit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GeonBit.0.0.0.3\lib\geonbit\GeonBit.dll</HintPath>
+      <HintPath>..\packages\GeonBit.0.0.0.4\lib\geonbit\GeonBit.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GeonBit.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -90,7 +90,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="GraphicsImporters, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GeonBit.0.0.0.3\lib\geonbit\GraphicsImporters.dll</HintPath>
+      <HintPath>..\packages\GeonBit.0.0.0.4\lib\geonbit\GraphicsImporters.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MonoGame.Framework">

@@ -23,7 +23,7 @@ namespace EmptyGeonBitProject
             InitParams.UiTheme = "hd";
             InitParams.DebugMode = true;
             InitParams.EnableVsync = false;
-            InitParams.FullScreen = true;
+            InitParams.FullScreen = false;
             InitParams.Title = "Octree";
         }
 
