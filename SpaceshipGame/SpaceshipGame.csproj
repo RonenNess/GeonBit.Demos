@@ -70,15 +70,15 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AnimationImporters, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GeonBit.0.0.0.4\lib\geonbit\AnimationImporters.dll</HintPath>
+      <HintPath>..\packages\GeonBit.0.1.0.2\lib\geonbit\AnimationImporters.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Animations, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GeonBit.0.0.0.4\lib\geonbit\Animations.dll</HintPath>
+      <HintPath>..\packages\GeonBit.0.1.0.2\lib\geonbit\Animations.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="BulletSharp, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BulletSharp.0.9\lib\net40-client\BulletSharp.dll</HintPath>
+    <Reference Include="BulletSharp, Version=0.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BulletSharp.0.10\lib\net40-client\BulletSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="DataTypes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -86,7 +86,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="GeonBit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GeonBit.0.0.0.4\lib\geonbit\GeonBit.dll</HintPath>
+      <HintPath>..\packages\GeonBit.0.1.0.2\lib\geonbit\GeonBit.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GeonBit.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -94,7 +94,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="GraphicsImporters, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GeonBit.0.0.0.4\lib\geonbit\GraphicsImporters.dll</HintPath>
+      <HintPath>..\packages\GeonBit.0.1.0.2\lib\geonbit\GraphicsImporters.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MonoGame.Framework">
@@ -363,14 +363,15 @@
     <Content Include="Content\GeonBit.UI\themes\editor\textures\white_texture.png" />
     <Content Include="Content\GeonBit.UI\themes\editor\ThemeData.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
-  <Import Project="..\packages\BulletSharp.0.9\build\net40-client\BulletSharp.targets" Condition="Exists('..\packages\BulletSharp.0.9\build\net40-client\BulletSharp.targets')" />
+  <Import Project="..\packages\BulletSharp.0.10\build\net40-client\BulletSharp.targets" Condition="Exists('..\packages\BulletSharp.0.10\build\net40-client\BulletSharp.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\BulletSharp.0.9\build\net40-client\BulletSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BulletSharp.0.9\build\net40-client\BulletSharp.targets'))" />
+    <Error Condition="!Exists('..\packages\BulletSharp.0.10\build\net40-client\BulletSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BulletSharp.0.10\build\net40-client\BulletSharp.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

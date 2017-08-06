@@ -65,7 +65,7 @@ namespace SpaceshipGame
             ChallangeLevel += 0.025f;
 
             // get physical body
-            PhysicalBody body = _GameObject.GetComponent<PhysicalBody>();
+            RigidBody body = _GameObject.GetComponent<RigidBody>();
 
             // random size
             _scaleFactor = 1f + (float)rand.NextDouble() * (1.5f + ChallangeLevel);
@@ -101,7 +101,7 @@ namespace SpaceshipGame
         private void SplitMeteor()
         {
             // get base size
-            PhysicalBody body = _GameObject.GetComponent<PhysicalBody>();
+            RigidBody body = _GameObject.GetComponent<RigidBody>();
             float currSize = body.Scale.X;
 
             // create explosion effect
@@ -124,7 +124,7 @@ namespace SpaceshipGame
 
                 // override some meteor controls properties before it spawns
                 AsteroidControls splitControls = split.GetComponent<AsteroidControls>();
-                PhysicalBody splitBody = split.GetComponent<PhysicalBody>();
+                RigidBody splitBody = split.GetComponent<RigidBody>();
 
                 // set clonsed hp and scale factor
                 splitControls._hp = _maxHp / 2;
@@ -155,11 +155,11 @@ namespace SpaceshipGame
             if (other.Name == "player")
             {
                 // apply force to push the ship further back
-                float currSize = _GameObject.GetComponent<PhysicalBody>().Scale.X;
+                float currSize = _GameObject.GetComponent<RigidBody>().Scale.X;
                 float force = Math.Min(_speedFactor * currSize, 6.5f) * 3000f;
                 Vector3 direction = other.SceneNode.WorldPosition - _GameObject.SceneNode.WorldPosition;
                 direction.Normalize();
-                other.GetComponent<PhysicalBody>().ApplyForce(direction * force);
+                other.GetComponent<RigidBody>().ApplyForce(direction * force);
 
                 // create explosion effect
                 GameObject explosion = Managers.Prototypes.Spawn("explosion");
@@ -208,7 +208,7 @@ namespace SpaceshipGame
         protected override void OnHeartbeat()
         {
             // if out of screen, destroy self
-            if (_GameObject.GetComponent<PhysicalBody>().Position.Z > 15f + _scaleFactor)
+            if (_GameObject.GetComponent<RigidBody>().Position.Z > 15f + _scaleFactor)
             {
                 _GameObject.Destroy();
             }

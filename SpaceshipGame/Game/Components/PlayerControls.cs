@@ -68,7 +68,7 @@ namespace SpaceshipGame
             {
                 // make the ship model black and turn physics ethereal so the ship will fall out of the screen
                 _GameObject.Find("model").GetComponent<ModelRenderer>().MaterialOverride.DiffuseColor = Color.Black;
-                _GameObject.GetComponent<PhysicalBody>().IsEthereal = true;
+                _GameObject.GetComponent<RigidBody>().IsEthereal = true;
 
                 // stop music
                 Managers.SoundManager.StopMusic();
@@ -115,14 +115,14 @@ namespace SpaceshipGame
 
                         // update position and copy transformations from node to physical body
                         bullet.SceneNode.Position = _GameObject.SceneNode.WorldPosition + Vector3.Left * 1.5f * i;
-                        bullet.GetComponent<PhysicalBody>().CopyNodeWorldMatrix(true);
+                        bullet.GetComponent<RigidBody>().CopyNodeWorldMatrix(true);
                         bullet.Parent = _GameObject.Parent;
                     }
                 }
             }
 
             // get physical body
-            PhysicalBody body = _GameObject.GetComponent<PhysicalBody>();
+            RigidBody body = _GameObject.GetComponent<RigidBody>();
 
             // set movement speed factor
             float moveSpeed = 750f;

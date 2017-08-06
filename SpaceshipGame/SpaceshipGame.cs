@@ -47,6 +47,8 @@ namespace SpaceshipGame
         /// </summary>
         override public void Initialize()
         {
+            Managers.Diagnostic.DebugRenderPhysics = true;
+
             // create a new empty scene
             GameScene scene = new GameScene();
 
@@ -91,7 +93,7 @@ namespace SpaceshipGame
             GameObject asteroid = new GameObject("asteroid");
 
             // create the asteroid physical body
-            PhysicalBody asteroidBody = new PhysicalBody(new SphereInfo(1.5f), mass: 500f);
+            RigidBody asteroidBody = new RigidBody(new SphereInfo(1.5f), mass: 500f);
             asteroidBody.Gravity = Vector3.Zero;
             asteroidBody.IsEthereal = true;
             asteroid.AddComponent(asteroidBody);
@@ -179,8 +181,8 @@ namespace SpaceshipGame
 
             // create an invisible floor to prevent stuff from falling to the endless abyss.
             GameObject floor = new GameObject();
-            floor.AddComponent(new PhysicalBody(new EndlessPlaneInfo(Vector3.Up)));
-            floor.GetComponent<PhysicalBody>().CollisionGroup = (short)CollisionGroups.Terrain;
+            floor.AddComponent(new KinematicBody(new EndlessPlaneInfo(Vector3.Up)));
+            floor.GetComponent<KinematicBody>().CollisionGroup = (short)CollisionGroups.Terrain;
             floor.Parent = scene.Root;
 
             // start background music
@@ -235,7 +237,7 @@ namespace SpaceshipGame
 
             // create a physical body for the player (note: make it start height in the air so the player ship will "drop" into scene).
             Vector3 bodySize = new Vector3(1f, 1.5f, 3.5f);
-            PhysicalBody shipPhysics = new PhysicalBody(new BoxInfo(bodySize), mass: 10f, inertia: 0f);
+            RigidBody shipPhysics = new RigidBody(new BoxInfo(bodySize), mass: 10f, inertia: 0f);
             shipPhysics.Position = Vector3.UnitY * 30;
             shipPhysics.SetDamping(0.95f, 0.95f);
             shipPhysics.Gravity = Vector3.Down * 50f;
@@ -271,9 +273,9 @@ namespace SpaceshipGame
 
             // add time-to-live component to remove bullets after a while
             bullet.AddComponent(new TimeToLive(1f));
-            
+
             // attach physical body to the bullet so it can collide stuff
-            PhysicalBody bulletBody = new PhysicalBody(new SphereInfo(1f), mass: 1f);
+            RigidBody bulletBody = new RigidBody(new SphereInfo(1f), mass: 1f);
             bulletBody.CollisionGroup = (short)CollisionGroups.FriendProjectiles;
             bulletBody.CollisionMask = (short)(CollisionGroups.Enemies);
             bulletBody.IsEthereal = true;
