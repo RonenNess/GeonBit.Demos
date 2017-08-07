@@ -47,8 +47,6 @@ namespace SpaceshipGame
         /// </summary>
         override public void Initialize()
         {
-            Managers.Diagnostic.DebugRenderPhysics = true;
-
             // create a new empty scene
             GameScene scene = new GameScene();
 

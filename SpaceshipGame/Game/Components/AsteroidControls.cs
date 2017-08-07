@@ -110,7 +110,7 @@ namespace SpaceshipGame
             explosion.Parent = _GameObject.Parent;
 
             // too small? destroy
-            if (currSize < 1.65f)
+            if (currSize < 1.5f)
             {
                 _GameObject.Destroy();
                 return;
@@ -131,9 +131,12 @@ namespace SpaceshipGame
                 splitControls._maxHp = _hp;
 
                 // set scale and velocity
-                splitBody.Scale = body.Scale * 0.5f;
+                Vector3 newScale = body.Scale * 0.75f;
+                splitBody.Scale = newScale;
+                splitControls._scaleFactor = newScale.X;
                 splitBody.ConstVelocity = body.ConstVelocity.Value + new Vector3(i * 2f, 0, 0);
 
+                // so we won't init the split from spawn and override its settings
                 splitControls._alreadyInit = true;
 
                 // add to scene (this will invoke spawn event)
