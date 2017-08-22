@@ -24,7 +24,7 @@ namespace SpaceshipGame
             InitParams.UiTheme = "editor";
             InitParams.DebugMode = false;
             InitParams.EnableVsync = true;
-            InitParams.FullScreen = true;
+            InitParams.FullScreen = false;
             InitParams.Title = "Super Spaceship Game";
         }
 
@@ -180,11 +180,11 @@ namespace SpaceshipGame
             // create an invisible floor to prevent stuff from falling to the endless abyss.
             GameObject floor = new GameObject();
             floor.AddComponent(new KinematicBody(new EndlessPlaneInfo(Vector3.Up)));
-            floor.GetComponent<KinematicBody>().CollisionGroup = (short)CollisionGroups.Terrain;
+            floor.GetComponent<KinematicBody>().CollisionGroup = (short)GeonBit.Core.Physics.CollisionGroups.Terrain;
             floor.Parent = scene.Root;
 
             // start background music
-            Managers.SoundManager.PlayMusic("game/back_music", true, 0.5f);
+            //Managers.SoundManager.PlayMusic("game/back_music", true, 0.5f);
         }
         
         /// <summary>
@@ -239,7 +239,7 @@ namespace SpaceshipGame
             shipPhysics.Position = Vector3.UnitY * 30;
             shipPhysics.SetDamping(0.95f, 0.95f);
             shipPhysics.Gravity = Vector3.Down * 50f;
-            shipPhysics.CollisionGroup = (short)CollisionGroups.Player;
+            shipPhysics.CollisionGroup = (short)GeonBit.Core.Physics.CollisionGroups.Player;
             player.AddComponent(shipPhysics);
 
             // add player controls component to the player object
@@ -274,8 +274,6 @@ namespace SpaceshipGame
 
             // attach physical body to the bullet so it can collide stuff
             RigidBody bulletBody = new RigidBody(new SphereInfo(1f), mass: 1f);
-            bulletBody.CollisionGroup = (short)CollisionGroups.FriendProjectiles;
-            bulletBody.CollisionMask = (short)(CollisionGroups.Enemies);
             bulletBody.IsEthereal = true;
             bulletBody.Gravity = Vector3.Zero;
             bulletBody.ConstVelocity = Vector3.Forward * 40f;

@@ -29,7 +29,7 @@ namespace ParticleSystems
             InitParams.UiTheme = "hd";
             InitParams.DebugMode = true;
             InitParams.EnableVsync = true;
-            InitParams.FullScreen = true;
+            InitParams.FullScreen = false;
             InitParams.Title = "Particles";
         }
 

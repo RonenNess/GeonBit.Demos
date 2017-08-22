@@ -60,7 +60,6 @@ namespace EmptyGeonBitProject
                 // set model materials color and disable lighting
                 foreach (var material in model.GetMaterials())
                 {
-                    material.LightingEnabled = true;
                     material.DiffuseColor = Color.Gray;
                     material.SpecularColor = Color.White;
                     material.SpecularPower = 50f;

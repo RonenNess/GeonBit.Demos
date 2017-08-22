@@ -58,7 +58,7 @@ namespace EmptyGeonBitProject
             // create the scene
             GameScene scene = new GameScene();
             GameObject.OctreeSceneBoundaries = new BoundingBox(Vector3.One * -sceneSize, Vector3.One * sceneSize);
-            GameObject.OctreeMaxDivisions = 6;
+            GameObject.OctreeMaxDivisions = 7;
             GameObject octree = new GameObject("octree", SceneNodeType.OctreeCulling);
             octree.Parent = scene.Root;
 
