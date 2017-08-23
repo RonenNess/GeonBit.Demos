@@ -49,3 +49,24 @@ Shows the Octree scene node type and how it can optimize renderings.
 Shows a trick to how to make Isometric-styled game.
 
 ![Screenshot](Isometric/screenshot.png "Screenshot")
+
+
+## Lights
+
+Demonstrate the built-in lit material.
+
+![Screenshot](Lights/screenshot.png "Screenshot")
+
+
+## Physics
+
+Demonstrate the built-in physics integration (using bullet3d).
+
+![Screenshot](Physics/screenshot.png "Screenshot")
+
+
+## CombinedMeshes
+
+Demonstrate the built-in combined meshes renderer, which allows us to draw lots of static meshes as one.
+
+![Screenshot](CombinedMeshes/screenshot.png "Screenshot")

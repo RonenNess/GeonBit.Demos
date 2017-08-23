@@ -10,11 +10,11 @@
 
 #-------------------------------- References --------------------------------#
 
-/reference:..\..\packages\GeonBit.UI.3.0.0.1\lib\geonbitui\DataTypes.dll
-/reference:..\..\packages\GeonBit.0.1.0.2\lib\geonbit\AnimationImporters.dll
-/reference:..\..\packages\GeonBit.0.1.0.2\lib\geonbit\Animations.dll
-/reference:..\..\packages\GeonBit.0.1.0.2\lib\geonbit\GeonBit.dll
-/reference:..\..\packages\GeonBit.0.1.0.2\lib\geonbit\GraphicsImporters.dll
+/reference:..\..\packages\GeonBit.UI.3.0.1.1\lib\geonbitui\DataTypes.dll
+/reference:..\..\packages\GeonBit.0.1.0.3\lib\geonbit\AnimationImporters.dll
+/reference:..\..\packages\GeonBit.0.1.0.3\lib\geonbit\Animations.dll
+/reference:..\..\packages\GeonBit.0.1.0.3\lib\geonbit\GeonBit.dll
+/reference:..\..\packages\GeonBit.0.1.0.3\lib\geonbit\GraphicsImporters.dll
 
 #---------------------------------- Content ---------------------------------#
 
