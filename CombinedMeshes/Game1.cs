@@ -61,8 +61,8 @@ namespace Sprite
             Camera cameraComponent = new Camera();
             cameraComponent.FarPlane = 10000f;
             camera.AddComponent(cameraComponent);
-            camera.SceneNode.Position = -new Vector3(-10, 0, 0);
-            cameraComponent.LookAt = new Vector3(0, 0, 0);
+            camera.SceneNode.Position = new Vector3(-100, 100, -100);
+            cameraComponent.LookAt = new Vector3(0, 100, 0);
             camera.AddComponent(new CameraEditorController());
             camera.Parent = scene.Root;
 
@@ -73,13 +73,13 @@ namespace Sprite
             var model = Resources.GetModel("GeonBit.Core/BasicMeshes/Cube");
 
             // add lots of entities to the combined renderer
-            int amount = 15;
+            int amount = 10;
             float shapeSize = 10f;
-            for (int x = -amount; x <= amount; ++x)
+            for (int x = 0; x < amount; ++x)
             {
-                for (int y = -amount; y <= amount; ++y)
+                for (int y = 0; y < amount; ++y)
                 {
-                    for (int z = -amount; z <= amount; ++z)
+                    for (int z = 0; z < amount; ++z)
                     {
                         Matrix transform = Matrix.CreateTranslation(new Vector3(x, y, z) * shapeSize * 0.5f) * Matrix.CreateScale(shapeSize);
                         combined.AddModel(model, transform);
