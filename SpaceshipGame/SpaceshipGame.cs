@@ -184,7 +184,7 @@ namespace SpaceshipGame
             floor.Parent = scene.Root;
 
             // start background music
-            //Managers.SoundManager.PlayMusic("game/back_music", true, 0.5f);
+            Managers.SoundManager.PlayMusic("game/back_music", true, 0.5f);
         }
         
         /// <summary>

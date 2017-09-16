@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using GeonBit;
 using GeonBit.ECS;
 using GeonBit.ECS.Components;
@@ -67,13 +68,14 @@ namespace Sprite
             camera.Parent = scene.Root;
 
             // create the combined meshes component
-            CombinedMeshesRenderer combined = scene.Root.AddComponent(new CombinedMeshesRenderer()) as CombinedMeshesRenderer;
+            var combined = new CombinedMeshesRenderer<VertexPositionNormalTexture>();
+            scene.Root.AddComponent(combined);
 
             // get model to add
             var model = Resources.GetModel("GeonBit.Core/BasicMeshes/Cube");
 
             // add lots of entities to the combined renderer
-            int amount = 10;
+            int amount = 12;
             float shapeSize = 10f;
             for (int x = 0; x < amount; ++x)
             {

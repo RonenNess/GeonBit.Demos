@@ -91,6 +91,7 @@ namespace Sprite
             var robotRenderer = robot.AddComponent(new ModelRenderer("Game/robot")) as ModelRenderer;
             var robotMat = new LitMaterial();
             robotMat.Texture = Resources.GetTexture("Game/robottexture_0");
+            robotMat.TextureEnabled = true;
             robotMat.DiffuseColor = Color.White;
             robotRenderer.SetMaterial(robotMat);
             robot.SceneNode.Scale = Vector3.One * tileSize * 0.75f;

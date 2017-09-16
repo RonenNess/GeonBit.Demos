@@ -70,11 +70,11 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AnimationImporters, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GeonBit.0.1.0.3\lib\geonbit\AnimationImporters.dll</HintPath>
+      <HintPath>..\packages\GeonBit.0.1.0.6\lib\geonbit\AnimationImporters.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Animations, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GeonBit.0.1.0.3\lib\geonbit\Animations.dll</HintPath>
+      <HintPath>..\packages\GeonBit.0.1.0.6\lib\geonbit\Animations.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="BulletSharp, Version=0.10.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -86,7 +86,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="GeonBit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GeonBit.0.1.0.3\lib\geonbit\GeonBit.dll</HintPath>
+      <HintPath>..\packages\GeonBit.0.1.0.6\lib\geonbit\GeonBit.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GeonBit.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -94,7 +94,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="GraphicsImporters, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GeonBit.0.1.0.3\lib\geonbit\GraphicsImporters.dll</HintPath>
+      <HintPath>..\packages\GeonBit.0.1.0.6\lib\geonbit\GraphicsImporters.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MonoGame.Framework">
@@ -154,9 +154,24 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="app.manifest" />
+    <None Include="Content\GeonBit.Core\BasicMeshes\Cone.fbx" />
+    <None Include="Content\GeonBit.Core\BasicMeshes\Cube.fbx" />
+    <None Include="Content\GeonBit.Core\BasicMeshes\Cylinder.fbx" />
+    <None Include="Content\GeonBit.Core\BasicMeshes\Plane.fbx" />
+    <None Include="Content\GeonBit.Core\BasicMeshes\Skybox.fbx" />
+    <None Include="Content\GeonBit.Core\BasicMeshes\Sphere.fbx" />
+    <None Include="Content\GeonBit.Core\BasicMeshes\SphereLowPoly.fbx" />
+    <None Include="Content\GeonBit.Core\BasicMeshes\SphereSmooth.fbx" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Content\GeonBit.Core\Effects\ClearGbuffer.fx" />
+    <Content Include="Content\GeonBit.Core\Effects\LitEffect.fx" />
+    <Content Include="Content\GeonBit.Core\Effects\NormalMapLitEffect.fx" />
+    <Content Include="Content\GeonBit.Core\Textures\geonbit-icon.png" />
+    <Content Include="Content\GeonBit.Core\Textures\geonbit.png" />
+    <Content Include="Content\GeonBit.Core\Textures\Skybox.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <Import Project="..\packages\BulletSharp.0.10\build\net40-client\BulletSharp.targets" Condition="Exists('..\packages\BulletSharp.0.10\build\net40-client\BulletSharp.targets')" />
